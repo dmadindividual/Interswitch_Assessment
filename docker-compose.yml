@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mail-dev:
+    image: maildev/maildev
+    container_name: mail-dev-bsn
+    restart: always
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    networks:
+      - spring-demo
+
+networks:
+  spring-demo:
+    driver: bridge
